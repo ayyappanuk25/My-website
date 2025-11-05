@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Resume - Start Bootstrap Theme</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+         
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+    integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+.section-hidden {
+  display: none !important;
+}
+.section-visible {
+  display: block !important;
+}
+.space {
+            margin-top: 20px; /* Adds 20px of vertical space above the element */
+        }
+/* Image containers for different sections */
+.about-images,
+.skills-images,
+.interests-images {
+  display: flex;
+  justify-content: space-between; /* Evenly spaces the figures */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the space between figures */
+}
+.about-images .figure {
+  flex: 1;
+  max-width: 30%; /* Ensures each figure is the same size for 3 images */
+}
+.skills-images .figure {
+  flex: 1;
+  max-width: 18%; /* Adjusted for 5 images */
+}
+.interests-images .figure {
+  flex: 1;
+  max-width: 22%; /* Adjusted for 4 images */
+}
+.figure {
+  flex: 1;
+}
+img {
+  width: 100%; /* Ensures images fit within their containers */
+  height: auto;
+}
+ 
+  /* Publications Section Styles */
+.publications-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.publication-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.publication-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.publication-content {
+  text-align: left;
+}
+.publication-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.publication-title {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.publication-abstract {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+.publication-item .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.publication-item .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publication-item {
+    padding: 20px;
+  }
+ 
+  .publication-title {
+    font-size: 1.25rem;
+  }
+ 
+  .publication-abstract {
+    font-size: 0.95rem;
+  }
+}
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .about-images,
+  .skills-images,
+  .interests-images {
+    flex-direction: column;
+    gap: 10px;
+  }
+ 
+  .figure {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+ 
+  h1 {
+    font-size: 2rem !important;
+  }
+ 
+  h2 {
+    font-size: 1.5rem !important;
+  }
+ 
+  h3 {
+    font-size: 1.2rem !important;
+  }
+ 
+  .resume-item {
+    padding: 15px 0;
+  }
+ 
+  .subheading {
+    font-size: 0.9rem !important;
+  }
+ 
+  p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+ 
+  .list-social-icons .fa-stack {
+    font-size: 0.8rem;
+  }
+}
+/* Resume Section Styles */
+.resume-viewer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.resume-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+.resume-header h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.resume-header p {
+  margin: 10px 0 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+.resume-content-wrapper {
+  padding: 40px;
+}
+.resume-embed-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 141.4%; /* A4 aspect ratio (297/210) */
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.resume-embed-container iframe,
+.resume-embed-container embed,
+.resume-embed-container object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.resume-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.resume-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+.resume-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  color: white;
+  text-decoration: none;
+}
+.resume-btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+.resume-btn-secondary:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+  text-decoration: none;
+}
+.resume-fallback {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+.resume-fallback i {
+  font-size: 4rem;
+  color: #667eea;
+  margin-bottom: 20px;
+}
+/* Awards Slider Styles */
+.awards-slider {
+  margin-top: 20px;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  width: 100%;
+  height: auto;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* Mobile Responsive for Resume */
+@media (max-width: 768px) {
+  .resume-content-wrapper {
+    padding: 20px;
+  }
+ 
+  .resume-header {
+    padding: 20px;
+  }
+ 
+  .resume-header h3 {
+    font-size: 1.4rem;
+  }
+ 
+  .resume-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+ 
+  .resume-btn {
+    width: 100%;
+    justify-content: center;
+  }
+ 
+  .resume-embed-container {
+    padding-bottom: 150%; /* Adjust for mobile */
+  }
+
+  .slideshow-container {
+    max-width: 100%;
+  }
+
+  .prev,
+  .next {
+    top: 45%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+/* Improve overall mobile layout */
+@media (max-width: 576px) {
+  .resume-section {
+    padding: 2rem 1rem !important;
+  }
+ 
+  .my-auto {
+    width: 100%;
+  }
+
+  .about-images,
+  .skills-images,
+  .interests-images {
+    gap: 10px;
+  }
+}
+
+/* Awards Slider Styles */
+.awards-slider {
+  margin-top: 20px;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.mySlides {
+  display: none;
+}
+.mySlides:first-of-type {
+  display: block; /* Show the first slide immediately on load */
+}
+.mySlides img {
+  width: 100%;
+  height: auto;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+<style>
+/* ===== General Gallery Layout ===== */
+.gallery-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* two per row */
+  gap: 25px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+.gallery-grid img {
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+</style>
+<style>
+.research-objective {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f8f9fa; /* light gray background */
+  border-left: 4px solid #007bff; /* accent color bar */
+  border-radius: 8px;
+}
+
+.objective-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.research-objective p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+  margin: 0;
+}
+
+.section-divider {
+  margin: 40px 0;
+  border-top: 2px solid #ddd;
+}
+</style>
+
+</head>
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none"> Portfolio </span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/AYYAPPANU.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#about" onclick="showSection('home')">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#resume" onclick="showSection('resume')">Resume</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#publication" onclick="showSection('publication')">Research Works</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#teaching-assistantship" onclick="showSection('teaching')">Teaching Assistantship</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#Gallery" onclick="showSection('Gallery')">Gallery</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+  <div class="container-fluid p-0">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column content-section" id="about" data-section="home">
+      <div class="my-auto">
+        <h1 class="mb-0">AYYAPPAN
+          <span class="text-primary">U</span>
+        </h1>
+        <div class="subheading mb-5" style="text-transform:none">Ph.D Research Scholar
+          <a href="mailto:ayyappanuk20@gmail.com">ayyappanuk20@gmail.com</a>
+        </div>
+        <p class="mb-5">Welcome to my personal website! I am Ayyappan U, a passionate and dedicated PhD student pursuing my doctoral studies in the field of computational mechanics at the Indian Institute of Technology, Bhubaneswar. My journey in the world of academia has been a fascinating and enriching one. I hold a Bachelor's degree in Civil Engineering and a Master's degree in Structural Engineering, both of which have fueled my curiosity and prepared me for the challenges of advanced research. My academic journey has always been driven by a deep-seated fascination for fracture in smart materials, and I am committed to making meaningful contributions to this field. My current research focuses on fatigue failure in piezoelectric energy harvesters. In addition to my research, I have a strong passion for teaching and sharing knowledge. I have had the privilege of teaching and mentoring undergraduate students in Solid mechanics, Structural analysis, and Finite element methods. I believe that effective teaching and mentorship are essential components of a successful academic journey.
+          For model implementation, I utilize the Gridap package in Julia.
+          I am passionate about pushing the boundaries of applied mechanics and am open to research collaborations—feel
+          free
+          to reach out!
+        </p>
+        <ul class="list-inline list-social-icons mb-0">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/vishnu.unnikrishnan.399/">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/ayyappan-u-a44265177/">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/ayyappanu">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.researchgate.net/profile/Ayyappan-Unnikrishna-Pillai">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-researchgate fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://scholar.google.co.in/citations?hl=en&user=rIZi5F8AAAAJ">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          </ul>
+        <div class="space"></div>
+        <div class="about-images">
+          <div class="figure">
+            <img src="img/orthopedicImplantFracture.jpeg" alt="Figure 1">
+          </div>
+          <div class="figure">
+            <img src="img/ExperimentalCrackPattern.jpg" alt="Figure 2">
+          </div>
+          <div class="figure">
+            <img src="img/quenchedglass.jpg" alt="Figure 3">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="resume" data-section="resume">
+  <div class="my-auto">
+    <h2 class="mb-5">My Resume</h2>
+   
+    <div class="resume-viewer-container">
+      <div class="resume-header">
+        <h3>Curriculum Vitae</h3>
+        <p>Ayyappan U - PMRF Research Scholar</p>
+      </div>
+     
+      <div class="resume-content-wrapper">
+        <div class="resume-embed-container">
+          <!-- For PDF files, use this format. Replace 'resume/AyyappanU_Resume.pdf' with your actual file path -->
+          <iframe src="resume/AyyappanCV.pdf" type="application/pdf"></iframe>
+         
+          <!-- Fallback for browsers that don't support iframe PDF viewing -->
+          <div class="resume-fallback">
+            <i class="fa fa-file-pdf-o"></i>
+            <p>Unable to display PDF in browser</p>
+            <p>Please use the download button below</p>
+          </div>
+        </div>
+       
+        <div class="resume-actions">
+          <a href="resume/AyyappanCV.pdf" class="resume-btn resume-btn-primary" target="_blank">
+            <i class="fa fa-eye"></i>
+            View Full Resume
+          </a>
+          <a href="resume/AyyappanCV.pdf" class="resume-btn resume-btn-secondary" download>
+            <i class="fa fa-download"></i>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="Gallery" data-section="Gallery">
+  <div class="my-auto">
+    <h2 class="mb-5">My Gallery</h2>
+
+    <!-- ========== General Section ========== -->
+    <h3 class="gallery-title">General</h3>
+    <div class="gallery-grid">
+      <img src="img/PMRF_Pic_WithDirector.jpeg" alt="PMRF Image 1">
+      <img src="img/PMRF_Pic1.jpeg" alt="PMRF Image 2">
+      <img src="img/eccomasConf1.jpg" alt="ECCOMAS Conference Image 1">
+      <img src="img/eccomasConf2.jpg" alt="ECCOMAS Conference Image 2">
+    </div>
+
+    <!-- ========== Phase-Field Fracture Model Section ========== -->
+    <h3 class="gallery-title">Phase-Field Fracture Model</h3>
+    <div class="gallery-grid">
+      <img src="img/MixedModePFCZM_beta3.gif" alt="Mixed-Mode Fracture Simulation">
+      <img src="img/MixedModePFCZM_LShapedSpec.gif" alt="Mixed-Mode L Shaped Simulation">
+    </div>
+
+    <!-- ========== Topology Optimization Section ========== -->
+    <h3 class="gallery-title">Topology Optimization</h3>
+    <div class="gallery-grid">
+      <img src="img/OptFixedThermoMech.gif" alt="Thermo-Mechanical Optimization">
+      <img src="img/OptCorbelMech.gif" alt="Mechanical Optimization">
+    </div>
+
+  </div>
+</section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="education" data-section="home">
+      <div class="my-auto">
+        <h2 class="mb-5">Education</h2>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Indian Institute of Technolgy, Bhubaneswar</h3>
+            <div class="subheading mb-0">Research Scholar</div>
+            <div class="subheading mb-3">Structural Engineering</div>
+            <div class="subheading mb-3">Tentative thesis title: Novel mode-dependent phase field models for fracture and fatigue failure in solids</div>
+            <p>This study introduces a consistent mode-dependent phase-field model (PFM) for brittle failure under both mechanical and electro-mechanical
+               loading conditions. The proposed framework will facilitate the topology optimization of smart materials, aiming to minimize structural
+               weight while enhancing fracture strength. Currently, a mode-dependent PFM for brittle fracture under mechanical loads is developed by
+                proposing mode-factor dependent degradation functions that incorporate the effect of two additional fracture parameters, namely the
+                mode-II critical energy release rate and mode-II fracture strength, on the overall mechanical response. Using the proposed mode-factor
+                dependent degradation functions and employing a recently proposed modified strain decomposition scheme, analytical expressions for the
+                mode-I and mode-II fracture strengths are provided corresponding to the mode-dependent parts of the elastic energy. Mode-dependent
+                 driving forces are proposed by adopting a modified Benzeggagh-Kenane (B-K) criteria and deriving expressions for the critical energy
+                 release rate corresponding to individual fracture modes. The proposed model provides a consistent coupling between the different
+                  fracture modes and can thus predict fracture for all possible mode-mixity ratios. A parametric study is carried out to unravel the
+                   effect of mixed-mode fracture parameters on the mechanical response of isotropic materials by considering a few representative
+                    numerical examples. The numerical results from the proposed model show an excellent agreement with experimental results reported
+                    in the literature. Moreover, results have been generated for the case of fatigue failure in materials under mechanical and
+                    electro-mechanical loading conditions, which can be extended for the development of mode-dependent fracture models.
+                     The fatigue effect has been characterized by introducing a degradation function that regulates the evolution of the phase
+                     field variable. The obtained results under both cyclically applied displacement and electric potential are demonstrated.
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2022 - Present</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">Indian Institute of Technolgy, Bhubaneswar</h3>
+            <div class="subheading mb-0">M.Tech</div>
+            <div class="subheading mb-3">Structural Engineering</div>
+            <div class="subheading mb-3">Thesis title: Novel continuum approaches for modeling material interfaces and brittle fracture </div>
+            <p>The development of high-performance bio-inspired composites is one of the contemporary topics of research interest. Experiments on
+              composites made of constituents with contrasting material properties and thus possessing a distinct material interface have shown
+              very promising results in terms of having high strength and high toughness. To the best of author's knowledge, although several analytical
+               studies on the functionally graded in-homogeneous plates with material properties varying in exponential or power series manner are
+               available in the literature, there is no analytical method to find a closed-form solution for composites with a distinct material
+               interface. Because of the unavailability of analytical methods, finite element solutions are extensively used for the analysis of these
+                problems. However, validation of the finite element solution for composites with material interface against benchmark problems will
+                increase the confidence. In this work, a diffused material interface-based novel method is proposed for finding analytical solutions
+                for the elastic deformation in composites with in-plane homogeneity that can be used as benchmark problems for the validation of the
+                finite element solutions. In the proposed analytical method, the material interface is diffused using a Gaussian kernel function and
+                derived expressions for the material properties that are smooth, i.e, functions and their derivatives are continuous, in the entire
+                domain. The Galerkin method is used to solve the governing partial differential equations for the derived smooth material properties.
+                The efficacy of the proposed analytical approach is demonstrated through illustrative examples on the composite bar, beam, and plates
+                with in-plate inhomogeneities. Also, a combined diffused material interface and hybrid phase-field model is proposed for
+                modeling micro-fracture evolution in heterogeneous composites. Here, analytical expressions for the regularized properties at the
+                 material interface are derived from the matrix and inclusions properties by using a recently proposed diffused material interface
+                 method. To model de-bonding at the material interface or cracks in the matrix or inclusion, the phase-field model, a continuum diffused
+                 crack approach, that provides the crack path as a solution to partial differential equations is used and thus bypasses the requirement
+                  of tracking individual cracks, enrichment of shape-functions or re-meshing during crack propagation. An open-source implementation of
+                  the proposed combined model is proposed using a recently developed finite element toolbox, Gridap in Julia. The proposed model and its
+                  implementation is validated against experimental results on complicated de-bonding and kinking micro-crack paths in quasi-brittle
+                  materials.</p>
+            <p>Grade: 9.43</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2020 - May 2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="skills" data-section="home">
+      <div class="my-auto">
+        <h2 class="mb-5">Skills</h2>
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Julia
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Matlab
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Mathematica
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Abaqus
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            STAAD.pro
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            ETABS
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            MS Office
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            LaTeX
+          </li>
+         
+        </ul>
+        <div class="skills-images">
+          <div class="figure">
+              <img src="img/juliaNew.png" alt="Julia">
+          </div>
+          <div class="figure">
+            <img src="img/matlab.jpg" alt="Matlab">
+          </div>
+          <div class="figure">
+              <img src="img/wolframmathematica.jpg" alt="Mathematica">
+          </div>
+          <div class="figure">
+            <img src="img/ETABSlogo.png" alt="ETABS">
+          </div>
+          <div class="figure">
+            <img src="img/Staadpro.png" alt="STAAD.pro">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="interests" data-section="home">
+      <div class="my-auto">
+        <h2 class="mb-5">Interests</h2>
+        <p>My research interests are rooted in the intricate and dynamic field of computational fracture mechanics, where I focus on developing advanced
+          methodologies to understand and predict material failure. I am particularly fascinated by fatigue failure involving multiphysics,
+          exploring how various physical phenomena interact to influence material degradation over time. A significant aspect of my work involves the
+          development of in-house computer codes, enabling tailored and efficient solutions for complex engineering problems. Additionally, I delve into
+          interface failure in composites, investigating the behavior of composite materials under stress, and frictional dissipation in fracture,
+          examining how frictional forces contribute to the energy dissipation in fracture processes
+          </p>
+        <p class="mb-0">Beyond research, I am passionate about activities that enrich both body and mind. Cycling offers me a refreshing way to stay
+          active and connect with nature. I enjoy reading across various genres, which fuels my curiosity and broadens my perspective.
+          Movies are another source of inspiration and entertainment, providing a glimpse into different cultures and narratives.
+          Lastly, hearing music is a constant companion, offering both relaxation and stimulation for creativity.
+      </p>
+      </div>
+      <div class="interests-images">
+        <div class="figure">
+            <img src="img/CrackKinking.JPG" alt="Figure 1">
+        </div>
+        <div class="figure">
+          <img src="img/CrackPatternObatined.png" alt="Figure 2">
+        </div>
+        <div class="figure">
+          <img src="img/ExperimentalResultFordoublenotchinlineNew.png" alt="Figure 3">
+        </div>
+        <div class="figure">
+          <img src="img/CompressionDoubleedgeExp.png" alt="Figure 4">
+        </div>
+      </div>
+    </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="awards" data-section="home">
+      <div class="my-auto">
+        <h2 class="mb-5">Achievements &amp; Certifications</h2>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check text-warning"></i>
+            Awarded Prime Minister's Research Fellowship by the Ministry of Education, Govt of India, in December 2022 for a period of three and half years.
+          </li>
+          <li>
+            <i class="fa-li fa fa-check text-warning"></i>
+            Secured AIR 2128 in GATE (CE) conducted by IIT Delhi in the year 2020 with a GATE score of 660.
+          </li>
+          <li>
+            <i class="fa-li fa fa-check text-warning"></i>
+            Presented on "Phase-Field Modeling of Fatigue Failure With Orthogonal Decomposition
+            of Constitutive Models Under Anisotropic Crack Propagation" at 9th European Congress on Computational Methods in Applied Sciences and Engineering, ECCOMAS 2024, Lisbob, Portugal.
+          </li>
+          <li>
+            <i class="fa-li fa fa-check text-warning"></i>
+            Presented on "A phase-field model for fatigue failure of ceramic laminates under residual stress field" at 9th International Congress on Computational Mechanics and Simulation, IIT Gandhinagar.
+          </li>
+          <li>
+            <i class="fa-li fa fa-check text-warning"></i>
+            Presented on "A diffused material interface based analytical method for elastic analysis of composites with in-plane inhomogeneity" 8th International Congress on Computational Mechanics and Simulation, IIT Indore.
+          </li>
+          <li>
+            <i class="fa-li fa fa-check text-warning"></i>
+            Got seventh rank in B.Tech Civil Engineering from APJ Abdul Kalam University, Kerala, India in 2015-2019 Batch
+          </li>
+        </ul>
+      </div>
+      <div class="awards-slider">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="img/PMRF_Pic_WithDirector.jpeg" alt="PMRF Image 1">
+          </div>
+          <div class="mySlides fade">
+            <img src="img/PMRF_Pic1.jpeg" alt="PMRF Image 2">
+          </div>
+          <div class="mySlides fade">
+            <img src="img/eccomasConf1.jpg" alt="ECCOMAS Conference Image 1">
+          </div>
+          <div class="mySlides fade">
+            <img src="img/eccomasConf2.jpg" alt="ECCOMAS Conference Image 2">
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </div>
+    </section>
+<section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="publication" data-section="publication">
+  <div class="my-auto">
+    <h2 class="mb-5">Research Works</h2>
+
+    <div class="research-objective">
+      <h3 class="objective-title">Research Objective</h3>
+      <p>
+        The present study aims to develop novel phase-field modeling techniques to enhance the design of fracture- and fatigue-resistant structural components. The study focuses on materials such as ceramics and multiphysics solids. By addressing limitations inherent in conventional phase-field models, we develop novel, mode-dependent, and length-scale-insensitive models to accurately predict both fracture and fatigue behavior. The applications of this work span from enhancing the fracture resilience of solids, including micropolar solids and multiphysics energy systems, to applying phase-field models in the topology optimization of structural designs. 
+      </p>
+    </div>
+    <hr class="section-divider">
+   
+    <div class="publications-container">
+      <!-- Publication 1 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">A Novel Phase-Field Model for Fatigue Failure in Functionally Graded Materials Under Thermo-Mechanical Loading (Under review)</h3>
+          <img class="publication-image" src="img/GraphicalAbstractLatest.jpg" alt="Publication 1">
+          <p class="publication-abstract">This article presents a novel phase-field model (PFM) for predicting fatigue failure in functionally graded materials (FGMs) under non-isothermal conditions. The proposed model is the first PFM for analysing fatigue in FGMs under coupled thermo-mechanical loading, and it establishes a phase-field length scale-insensitive formulation for thermo-mechanical fatigue in brittle materials. The governing equations and constitutive relations are derived within a thermodynamically consistent framework, allowing for the incorporation of dissipative effects such as viscous damping when necessary. To validate the proposed model, we considered homogeneous specimens as a special case of functionally graded ones and reproduced the results for a few representative benchmark problems. To investigate the effect of temperature boundary conditions and material gradation on the fatigue response, we conducted comprehensive parametric studies. Through representative numerical examples, we demonstrated that both the gradation parameter and the spatial arrangement of constituent materials significantly affect the fatigue life of FGMs. Through numerical examples, we demonstrated the predictive capability of the proposed model in accurately capturing the complex interplay between thermal and mechanical effects in fatigue processes. The numerical results show the effectiveness and versatility of the proposed model, which consistently yields predictions that are insensitive to the phase-field length scale. The numerical implementation of the proposed model is accomplished using an open-source finite element package called Gridap, available in Julia to promote reproducibility and further research in this area.</p>
+          <a href="https://dx.doi.org/10.2139/ssrn.5365300" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 1 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">A phase-field length scale insensitive micropolar fatigue model</h3>
+          <img class="publication-image" src="img/LengthInsensFatigue.jpg" alt="Publication 1">
+          <p class="publication-abstract">This article proposes a novel phase-field length scale insensitive model for fatigue failure in brittle materials. In the proposed model, we incorporate a necessary fatigue-related parameter to define the fatigue threshold energy as a function of the fracture strength and make the mechanical response of a material insensitive to the phase-field length scale. In the proposed model, we derive the governing partial differential equations by invoking the virtual power principle and assume constitutive relations for the thermodynamic fluxes on satisfying the thermodynamic laws. We provide a consistent derivation for determining the parameters that appear in the degradation function. We demonstrate the efficacy of the proposed model by generating phase-field length scale insensitive response in terms of crack length and maximum amplitude of load versus number of cycles for a few representative numerical examples, viz. a three-point bending test, a single-edge and a double-edge notched plate under low cycle fatigue. The numerical results highlight excellent insensitivity of the global mechanical response to the phase-field length scale parameter, validating the robustness of the proposed model. For numerical implementation, we have utilized an open-source finite element toolbox called Gridap, available in a high-performance programming language Julia, that facilitates third-party verification, promotes transparency and reproducibility, and sets a benchmark for efficient open-source code development in the scientific community.</p>
+          <a href="https://doi.org/10.1016/j.cma.2025.118259" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 1 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">A phase-field length scale insensitive model for fatigue failure in brittle materials</h3>
+          <img class="publication-image" src="img/MicropolarPFMFatigue.jpg" alt="Publication 1">
+          <p class="publication-abstract">This article proposes a novel micropolar phase-field model for size-dependent fatigue failure in solids under mechanical loading. To develop the proposed model that can capture experimentally observed size effects in brittle materials, we employ micropolar theory in a phase-field length scale-insensitive framework and address the limitations of classical phase-field fatigue models. A key advantage of the proposed model is its ability to eliminate artificial nonlocal effects introduced by the phase field length scale while preserving the physical size effects dictated by the material microstructure. In the proposed model, we introduce micro-rotation as an additional kinematic variable and derive the governing partial differential equations by invoking the principle of virtual power. The constitutive relations are established in accordance with thermodynamic laws, enabling the incorporation of dissipative effects whenever required. To make the proposed model insensitive to the phase-field length scale and thus eliminate artificial nonlocal effects, we incorporate a fatigue-related parameter that defines the fatigue threshold energy as a function of the material fracture strength. We demonstrate the efficacy of the proposed model through numerical simulations on a set of benchmark two- and three-dimensional problems that include three-point bending tests, single-edge notched plates, etc., and provide a qualitative experimental validation against the results available in the literature. The numerical results show a significant influence of the micropolar parameters on fatigue behavior, emphasizing the necessity of the proposed formulation for materials that exhibit pronounced nonlocal effects. We demonstrate the insensitivity of the proposed model to the phase-field length scale using plots of consistent crack growth versus the number of cycles for different values of the phase-field length scale. For the numerical implementation of the proposed model, we use an open-source finite element library called Gridap, available in Julia, a recently developed high-performance programming language. The availability of open-source codes ensures transparency, reproducibility, and ease of verification, setting a high standard for open-source computational tools in scientific research. The numerical findings validate the robustness of the proposed model, establishing its suitability for accurately simulating size-dependent fatigue behavior in materials.</p>
+          <a href="https://doi.org/10.1016/j.ijfatigue.2025.108875" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 1 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">A phase-field length scale insensitive mode-dependent fracture model for brittle failure</h3>
+          <img class="publication-image" src="img/ModedependentPFM.jpg" alt="Publication 1">
+          <p class="publication-abstract">This article presents a consistent phase-field length scale insensitive mode-dependent fracture model for brittle failure by proposing mode-factor dependent degradation functions that incorporate the effect of two additional fracture parameters, namely the mode-II critical energy release rate and mode-II fracture strength, on the overall mechanical response. Using the proposed mode-factor dependent degradation functions and employing a recently proposed modified strain decomposition scheme, we provide analytical expressions for the mode-I and mode-II fracture strengths corresponding to the mode-dependent parts of the elastic energy. Adopting a modified Benzeggagh–Kenane (B–K) criteria, we propose mode-dependent driving forces by deriving expressions for the critical energy release rate corresponding to individual fracture modes. The proposed model provides a consistent coupling between the different fracture modes and can thus predict fracture for all possible mode-mixity ratios. A parametric study is carried out to unravel the effect of mixed-mode fracture parameters on the mechanical response of isotropic materials by considering a few representative numerical examples. The numerical results from the proposed model show an excellent agreement with experimental results reported in the literature.</p>
+          <a href="https://doi.org/10.1016/j.engfracmech.2024.110385" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 1 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">A micropolar phase-field model for size-dependent electro-mechanical fracture</h3>
+          <img class="publication-image" src="img/MicropolarElectroMechPFM.jpg" alt="Publication 1">
+          <p class="publication-abstract">This article proposes a micropolar phase-field model for size-dependent brittle fracture in solids under electro-mechanical loading conditions. Considering displacement, micro-rotation, electric potential, and phase-field variable as the kinematic descriptors and employing the virtual power principle, we derive a set of coupled governing partial differential equations (PDEs) for size-dependent solids. Invoking the first and second laws of thermodynamics, we determine the constitutive relations for the thermodynamic fluxes. Carrying out the finite element implementation of the derived governing PDEs using the open-source Gridap package in Julia, we demonstrate the efficacy of the proposed phase-field model through a few representative numerical examples. Especially the importance of the proposed model in incorporating the effect of relative rotation, i.e., the difference between macro- and micro-rotation, on the response of solids under electro-mechanical loading is shown that may not be possible with the existing non-local models such as strain-gradient or couple-stress approaches. To capture the experimentally observed size effects in solids under electro-mechanical loading, the proposed model does not demand higher-order continuity of the field variables, unlike a typically used strain gradient model. To demonstrate the efficacy of the proposed model, we have compared our results against demanding experimental and numerical benchmark results available in the literature. We provide a parametric study to unravel the effect of different micropolar material parameters on the electro-mechanical response of a brittle solid. Interestingly, the proposed micropolar model is less sensitive to the phase-field length scale than the conventional non-polar phase-field models.</p>
+          <a href="https://doi.org/10.1016/j.ijmecsci.2024.109805" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 1 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">Determining the role of microstructural topology on the mechanical performance of nacre-inspired composites using a phase-field model</h3>
+          <img class="publication-image" src="img/determininmicrostructuretopology.jpg" alt="Publication 1">
+          <p class="publication-abstract">Bio-inspired composites are celebrated for their remarkable strength and fracture toughness, often surpassing the properties of their constituent materials. A prime example of this inspiration is the nacre which is approximately three thousand times tougher than its components and showcases not only high toughness but also high strength. This extraordinary performance is largely attributed to its intricate microstructure. However, engineered composites have faced challenges in achieving similar levels of toughness. Attempts to replicate the "brick–mortar" microstructure of nacre revealed that mere imitation falls short. Recent studies emphasize the critical influence of specific parameters, such as volume fraction, aspect ratio, and tablet waviness angle, on the microstructure effectiveness. Prior investigations, whether experimental, numerical, or analytical, underlined the importance of these parameters in shaping composite mechanical properties. However, many of these studies relied on commercial software with some inbuilt fracture criteria, often overlooking the potential benefits of incorporating a phase-field model for a more comprehensive parametric analysis. Our research delves into the impact of these parameters on the mechanical performance of nacre-inspired composites, utilizing a phase-field model based on Griffith's fracture criteria for complex crack propagation modeling. We notably reveal the superior performance of geometrically interlocking architecture compared to non-interlocking and rectangular architecture, marking a pioneering parametric exploration of this microstructure using a phase-field model. We validate our findings through experimental and numerical data. In summary, our work demonstrates that by strategically adjusting microstructural parameters, one can achieve optimal performance enhancements in nacre-inspired engineered composites. For instance, even a slight alteration of the waviness angle while maintaining constant volume fraction and aspect ratio can yield a remarkable 16.23% increase in fracture energy. Our open-source finite element codes, implemented using the Julia-based Gridap package, offer a "virtual" experimental tool for designing bio-inspired composites with high toughness and reasonable strength. This approach also provides valuable insights into creating exceptionally tough multilayered composites with diverse constituent combinations, holding significant promise for applications in automotive, aerospace, armor, and beyond.</p>
+          <a href="https://doi.org/10.1016/j.mtcomm.2023.107453" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 2 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <img class="publication-image" src="img/electromechanical.png" alt="Publication 2">
+          <h3 class="publication-title">A phase-field model for electro-mechanical fracture with an open-source implementation of it using Gridap in Julia</h3>
+          <p class="publication-abstract">In this paper, we propose a phase-field model for electro-mechanical fracture in brittle materials and provide an open-source implementation of the proposed model using a newly developed finite element (FE) toolbox, Gridap in Julia. Here, we have considered electric potential as an additional kinematic descriptor along with the displacement and phase-field variable. Using the virtual power principle, we have derived force balances for the electro-mechanical forces and a force balance associated with the damage. To incorporate the strong electro-mechanical coupling effect into the model, we have considered the Helmholtz free energy as a function of the electric field vector, strain tensor, phase-field variable, and the gradient of the phase-field variable. The proposed model ensures that the constitutive relations of the thermodynamic fluxes are on the satisfaction of the thermodynamic laws and can readily accommodate dissipative energy effects whenever needed. The proposed model provides complex crack paths as a solution to the governing partial differential equations (PDEs), and thus bypasses the need for re-meshing, enrichment of FE shape functions, and an explicit tracking of the crack surfaces. The use of Gridap makes the FE implementation of the proposed model exceedingly compact and user-friendly requiring very low memory usage and providing a high degree of flexibility to the users in defining weak forms of the governing PDEs. We have validated the proposed model and its implementation against a compact tension test on a single edge notched plate and a set of three-point bending tests on a notched beam made of lead zirconium titanate (PZT)-4 piezoelectric ceramics.</p>
+          <a href="https://doi.org/10.1177/10812865221133860" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 3 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <img class="publication-image" src="img/Combined_diffused_material_interface.jpg" alt="Publication 3">
+          <h3 class="publication-title">Combined diffused material interface and hybrid phase-field model for brittle fracture in heterogeneous composites</h3>
+          <p class="publication-abstract">In this article, we propose a novel approach for modeling brittle fracture in heterogeneous composites using a combined diffused material interface method and a hybrid phase-field model (PFM). We have used the diffused material interface method to derive analytical expressions for the regularized material properties across the material interfaces that are treated as an input to the PFM for the simulation of brittle fractures in composites. The use of diffused material interface method regularizes the material properties in such a way that one can avoid the discontinuity in stress across the material interface and thus bypass the requirement of explicit tracking of material interfaces for finite element implementation of the hybrid PFM. We have implemented the proposed combined model using a recently developed open-source finite element toolbox, Gridap in Julia. We have considered tests on a single circular fiber inclusion under tension, a bi-material rectangular plate under tension, single square inclusion under tensile loading, a notched composite beam with a central notch under symmetric three-point bending, and a rectangular plate with multiple fibers under tensile loading to show how the proposed combined model can be used to simulate brittle fracture in composites.</p>
+          <a href="https://doi.org/10.1016/j.engfracmech.2022.108957" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+      <!-- Publication 4 -->
+      <div class="publication-item">
+        <div class="publication-content">
+          <img class="publication-image" src="img/GraphicalAbsHomogenize.png" alt="Publication 4">
+          <h3 class="publication-title">A novel homogenization method for periodic piezoelectric composites via diffused material interface</h3>
+          <p class="publication-abstract">In this article, we propose a novel homogenization method for piezoelectric composites with periodic microstructures. In the proposed homogenization method, one can find the analytical expressions for the material properties of the composites in the representative volume element (RVE) via diffused material interface method. The availability of analytical expressions for the material properties in the entire domain of the RVE enables one to determine the effective homogenized material properties with the standard finite element method. As the proposed homogenization method regularizes the discontinuity in material properties across the interfaces, there is no need to explicitly track the material interfaces while implementing the finite element method for determining the effective material properties. Hence, one can implement the proposed homogenized method for any piezoelectric composites with complicated material interfaces and determine the effective material properties. In this study, we have considered the piezoelectric composites to be comprised of periodic microstructures where the RVE constitutes a matrix with an inclusion of a specific shape. We have carried out a study on the effect of the shape of inclusion viz. square-shaped, I-shaped, T-shaped, and plus-shaped, and the size of inclusion on the effective piezoelectric material properties. We have also studied the influence of shape and size of inclusion on the electro-mechanical response of a homogenized piezoelectric continuum. To implement the proposed homogenization method, we have used Gridap, an open-source finite element toolbox in Julia that provides very compact codes freely available to all the researchers and makes a third-party verification of the proposed method straightforward.</p>
+          <a href="https://doi.org/10.1080/15376494.2023.2219112" class="btn btn-primary" target="_blank">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column content-section" id="teaching-assistantship" data-section="teaching">
+      <div class="my-auto">
+        <h2 class="mb-5">Teaching Assistantship</h2>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">TA in Solid Mechanics</h3>
+            <div class="subheading mb-3">Indian Institute of Technolgy, Bhubaneswar</div>
+            <p>I conducted tutorial classes for B.Tech students, covering a range of topics in solid mechanics, including tensor algebra,
+              kinematics, and more. These sessions were designed to deepen students' understanding of complex concepts and enhance their problem-solving
+               skills in the field of solid mechanics.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2024 - Present</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">TA in CAD lab</h3>
+            <div class="subheading mb-3">Indian Institute of Technolgy, Bhubaneswar</div>
+            <p>I conducted tutorial classes for B.Tech students on various software tools used in civil engineering, including MATLAB, Abaqus, and
+              others. These sessions focused on equipping students with practical skills and knowledge to effectively utilize these tools in their
+               engineering projects.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2024 - Present</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">TA in Design of Concrete Structures (PMRF TA)</h3>
+            <div class="subheading mb-3">Centurion University of Technology and Management, Bhubaneswar</div>
+            <p> I taught a comprehensive course on the design of concrete structures for B.Tech fourth-year students, covering essential principles
+              and practical applications to prepare them for advanced challenges in civil engineering.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">January 2024 - April 2024, January 2025 - April 2025</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-0">TA in Advanced Solid Mechanics</h3>
+            <div class="subheading mb-3">Indian Institute of Technolgy, Bhubaneswar</div>
+            <p>I conducted tutorial classes for M.Tech students on various topics in solid mechanics, including tensor algebra, kinematics, and more.
+              These sessions were designed to provide in-depth knowledge and enhance the analytical skills required for advanced studies in solid
+              mechanics.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">January 2024 - April 2024</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto">
+            <h3 class="mb-3">Class on Matlab (PMRF TA)</h3>
+            <div class="subheading mb-0">younus college of engineering and technology, Kollam</div>
+            <div class="subheading mb-3">Thangal Kunju Musaliar Institute of Technology, Kollam</div>
+            <p>I conducted a tutorial and workshop for B.Tech students titled 'Exploring Scientific Programming: An Introduction to MATLAB,'
+               providing foundational skills in MATLAB for scientific and engineering applications.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2023 - December 2023</span>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+  </div>
+  <!-- <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+   
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+   
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+function showSection(sectionType) {
+  // Get all content sections
+  const sections = document.querySelectorAll('.content-section');
+ 
+  // Loop through all sections
+  sections.forEach(section => {
+    const sectionData = section.getAttribute('data-section');
+   
+    if (sectionType === 'home') {
+      // Show all sections except resume, publication, and teaching when Home is clicked
+      if (sectionData === 'home') {
+        section.classList.remove('section-hidden');
+        section.classList.add('section-visible');
+      } else {
+        section.classList.remove('section-visible');
+        section.classList.add('section-hidden');
+      }
+    } else if (sectionData === sectionType) {
+      // Show only the matching section
+      section.classList.remove('section-hidden');
+      section.classList.add('section-visible');
+    } else {
+      // Hide non-matching sections
+      section.classList.remove('section-visible');
+      section.classList.add('section-hidden');
+    }
+  });
+ 
+  // Prevent default anchor behavior
+  if (event) {
+    event.preventDefault();
+  }
+ 
+  // Scroll to top of the visible content smoothly
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100);
+}
+// Show all sections by default on page load
+window.addEventListener('DOMContentLoaded', function() {
+  showSection('home');
+});
+    </script> -->
+  
+  
+<script>
+  let slideIndex = 1;
+  let isInitialized = false;
+  let autoSlideInterval;
+  const slideInterval = 3000; // Auto-advance every 3 seconds (adjust as needed)
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+    // Optionally add fade class for animation on changes
+    slides[slideIndex - 1].classList.add('fade');
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      plusSlides(1);
+    }, slideInterval);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+    }
+  }
+
+  function showSection(sectionType) {
+    // Get all content sections
+    const sections = document.querySelectorAll('.content-section');
+
+    // Loop through all sections
+    sections.forEach(section => {
+      const sectionData = section.getAttribute('data-section');
+
+      if (sectionType === 'home') {
+        // Show all sections except resume, publication, and teaching when Home is clicked
+        if (sectionData === 'home') {
+          section.classList.remove('section-hidden');
+          section.classList.add('section-visible');
+        } else {
+          section.classList.remove('section-visible');
+          section.classList.add('section-hidden');
+        }
+      } else if (sectionData === sectionType) {
+        // Show only the matching section
+        section.classList.remove('section-hidden');
+        section.classList.add('section-visible');
+      } else {
+        // Hide non-matching sections
+        section.classList.remove('section-visible');
+        section.classList.add('section-hidden');
+      }
+    });
+
+    // Prevent default anchor behavior
+    if (event) {
+      event.preventDefault();
+    }
+
+    // Reset slideshow to first slide when 'home' is shown, but only if not initial load
+    if (sectionType === 'home' && isInitialized) {
+      slideIndex = 1;
+      showSlides(slideIndex);
+    }
+
+    // Scroll to top of the visible content smoothly
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  }
+
+  // Preload images to avoid blank flash
+  function preloadSlideshowImages() {
+    const imageUrls = [
+      'img/eccomasConf1.jpg',
+      'img/eccomasConf2.jpg'
+    ];
+    let loadedCount = 0;
+    const totalImages = imageUrls.length;
+
+    imageUrls.forEach(url => {
+      const img = new Image();
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          // All images loaded, now initialize
+          isInitialized = true;
+          showSlides(1);  // Ensure first slide is shown via JS after preload
+          startAutoSlide();  // Start auto-sliding after init
+        }
+      };
+      img.onerror = () => {
+        console.error(`Failed to load image: ${url}`);
+        loadedCount++;  // Still count to proceed even if error
+        if (loadedCount === totalImages) {
+          isInitialized = true;
+          showSlides(1);
+          startAutoSlide();
+        }
+      };
+      img.src = url;
+    });
+  }
+
+  // Pause on hover over slideshow container
+  function setupHoverPause() {
+    const container = document.querySelector('.slideshow-container');
+    if (container) {
+      container.addEventListener('mouseenter', stopAutoSlide);
+      container.addEventListener('mouseleave', startAutoSlide);
+    }
+  }
+
+  // Pause on arrow clicks (user interaction)
+  function setupArrowPause() {
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    if (prev) prev.addEventListener('click', () => { stopAutoSlide(); setTimeout(startAutoSlide, slideInterval); });
+    if (next) next.addEventListener('click', () => { stopAutoSlide(); setTimeout(startAutoSlide, slideInterval); });
+  }
+
+  // Initialize on full load (waits for images)
+  window.addEventListener('load', function() {
+    preloadSlideshowImages();
+    showSection('home');
+    setupHoverPause();
+    setupArrowPause();
+  });
+</script>
+    <!-- Bootstrap core JavaScript -->
+
+
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+</body>
+</html>
